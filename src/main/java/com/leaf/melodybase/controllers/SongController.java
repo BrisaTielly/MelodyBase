@@ -43,4 +43,10 @@ public class SongController {
         SongDTO song = songService.update(id,songDTO);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(song);
     }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> delete (@PathVariable Long id){
+        songService.delete(id);
+        return ResponseEntity.ok("Música com o id " + id + " Deletada com sucesso!!!");
+    }
 }

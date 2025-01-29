@@ -50,4 +50,8 @@ public class SongService {
         }
         return null;
     }
+
+    public void delete(Long id){
+        songRepository.deleteById(id);
+    }
 }
