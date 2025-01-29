@@ -38,4 +38,16 @@ public class SongService {
         songModel = songRepository.save(songModel);
         return songMapper.mapToDTO(songModel);
     }
+
+    public SongDTO update(Long id, SongDTO songDTO) {
+        Optional<SongModel> songModel = songRepository.findById(id);
+        if(songModel.isPresent()){
+            //Encontrou uma model com esse id
+            SongModel songAtual = songMapper.mapToModel(songDTO); //Transformando em model
+            songAtual.setId(id);
+            songAtual = songRepository.save(songAtual);
+            return songMapper.mapToDTO(songAtual);
+        }
+        return null;
+    }
 }

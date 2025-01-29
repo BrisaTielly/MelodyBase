@@ -37,4 +37,10 @@ public class SongController {
         SongDTO song = songService.save(songDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(song);
     }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<?> update (@PathVariable Long id, @RequestBody SongDTO songDTO){
+        SongDTO song = songService.update(id,songDTO);
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(song);
+    }
 }
