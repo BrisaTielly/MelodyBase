@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SongMapper {
-
     public SongModel mapToModel(SongDTO songDTO){
         SongModel songModel = new SongModel();
         songModel.setId(songDTO.getId());
