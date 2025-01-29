@@ -1,0 +1,29 @@
+package com.leaf.melodybase.services;
+
+import com.leaf.melodybase.dtos.SongDTO;
+import com.leaf.melodybase.mappers.SongMapper;
+import com.leaf.melodybase.models.SongModel;
+import com.leaf.melodybase.repositories.SongRepository;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+public class SongService {
+
+    private final SongRepository songRepository;
+    private final SongMapper songMapper;
+
+    public SongService(SongMapper songMapper, SongRepository songRepository) {
+        this.songMapper = songMapper;
+        this.songRepository = songRepository;
+    }
+
+    public List<SongDTO> findAll(){
+        List<SongModel> songModel = songRepository.findAll();
+        return songModel.stream()
+                .map(songMapper::mapToDTO)
+                .collect(Collectors.toList());
+    }
+}
