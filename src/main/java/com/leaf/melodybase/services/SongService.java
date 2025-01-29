@@ -33,4 +33,9 @@ public class SongService {
         return  songModel.map(songMapper::mapToDTO).orElse(null);
     }
 
+    public SongDTO save(SongDTO songDTO){
+        SongModel songModel = songMapper.mapToModel(songDTO);
+        songModel = songRepository.save(songModel);
+        return songMapper.mapToDTO(songModel);
+    }
 }

@@ -73,3 +73,24 @@ SELECT *
 FROM TB_ARTIST a
 INNER JOIN TB_SONG s
 ON a.id as 'chama' = s.ARTIST_ID [42000-232]
+2025-01-29 15:12:06.305482-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SHOW [*]TABLE STATUS LIKE 'tb_song'"; SQL statement:
+SHOW TABLE STATUS LIKE 'tb_song' [42000-232]
+2025-01-29 15:12:15.375380-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SHOW [*]TABLE STATUS LIKE 'TB_SONG'"; SQL statement:
+SHOW TABLE STATUS LIKE 'TB_SONG' [42000-232]
+2025-01-29 15:12:22.167731-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SHOW [*]TABLE STATUS LIKE TB_SONG"; SQL statement:
+SHOW TABLE STATUS LIKE TB_SONG [42000-232]
+2025-01-29 15:12:33.294768-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SHOW [*]TABLE STATUS LIKE ""TB_SONG"""; SQL statement:
+SHOW TABLE STATUS LIKE "TB_SONG" [42000-232]
+2025-01-29 15:13:12.311995-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SHOW [*]TABLE STATUS LIKE ""TB_SONG"""; SQL statement:
+SHOW TABLE STATUS LIKE "TB_SONG" [42000-232]
+2025-01-29 15:13:20.998321-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SHOW [*]TABLE STATUS LIKE TB_SONG"; SQL statement:
+SHOW TABLE STATUS LIKE TB_SONG [42000-232]
+2025-01-29 15:13:43.036760-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SHOW [*]TABLE STATUS LIKE 'tb_song'"; SQL statement:
+SHOW TABLE STATUS LIKE 'tb_song' [42000-232]
