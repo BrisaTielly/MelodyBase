@@ -7,6 +7,7 @@ import com.leaf.melodybase.repositories.SongRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -26,4 +27,10 @@ public class SongService {
                 .map(songMapper::mapToDTO)
                 .collect(Collectors.toList());
     }
+
+    public SongDTO findById(Long id){
+        Optional<SongModel> songModel = songRepository.findById(id);
+        return  songModel.map(songMapper::mapToDTO).orElse(null);
+    }
+
 }

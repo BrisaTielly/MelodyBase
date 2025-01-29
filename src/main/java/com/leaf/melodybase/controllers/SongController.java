@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.reactive.ClientHttpResponseDecorator;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,5 +27,11 @@ public class SongController {
     public ResponseEntity<List<SongDTO>> findAll() {
         List<SongDTO> songDTO = songService.findAll();
         return ResponseEntity.ok(songDTO);
+    }
+
+    @GetMapping("/listar/{id}")
+    public ResponseEntity<SongDTO> findById(@PathVariable Long id){
+        SongDTO songDTO = songService.findById(id);
+        return ResponseEntity.status(HttpStatus.FOUND).body(songDTO);
     }
 }
