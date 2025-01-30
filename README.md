@@ -83,4 +83,14 @@ mvn spring-boot:run
 
 
 ```
+
+## Em desenvolvimento...
+
+- Front End com Thymeleaf
+- Documentação com Swagger
+- Tratamento de exceções personalizados 
+- Testes automatizados
+- Capturas de tela.
+- Autenticação com JWT
+- 
 ---
