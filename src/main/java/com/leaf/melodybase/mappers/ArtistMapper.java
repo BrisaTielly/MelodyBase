@@ -1,7 +1,6 @@
 package com.leaf.melodybase.mappers;
 
 import com.leaf.melodybase.dtos.ArtistDTO;
-import com.leaf.melodybase.dtos.ArtistResponseDTO;
 import com.leaf.melodybase.models.ArtistModel;
 import org.springframework.stereotype.Component;
 
