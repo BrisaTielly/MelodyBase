@@ -1,5 +1,6 @@
 package com.leaf.melodybase.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,6 +21,7 @@ public class SongModel {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "artist_id")
+
     private ArtistModel artist;
 
     @Column(name = "album")

@@ -28,7 +28,7 @@ public class ArtistModel {
     @Column(name = "musical_genre")
     private String musicalGenre;
 
-    @OneToMany(mappedBy = "artist")
+    @OneToMany(mappedBy = "artist", fetch = FetchType.EAGER)
     @JsonIgnore
     private List<SongModel> songs;
 

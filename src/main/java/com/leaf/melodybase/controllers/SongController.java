@@ -20,13 +20,13 @@ public class SongController {
         this.songService = songService;
     }
 
-    @GetMapping("/listar")
+    @GetMapping("/list")
     public ResponseEntity<List<SongDTO>> findAll() {
         List<SongDTO> songDTO = songService.findAll();
         return ResponseEntity.ok(songDTO);
     }
 
-    @GetMapping("/listar/{id}")
+    @GetMapping("/list/{id}")
     public ResponseEntity<SongDTO> findById(@PathVariable Long id){
         SongDTO songDTO = songService.findById(id);
         return ResponseEntity.status(HttpStatus.FOUND).body(songDTO);
