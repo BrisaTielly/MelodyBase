@@ -50,8 +50,6 @@ mvn spring-boot:run
 4. A API estará disponível em:  
 `http://localhost:8080`
 
-5. Acesse o Swagger para documentação:  
-`http://localhost:8080/swagger-ui.html`
 
 ## 🌐 Endpoints Principais
 
@@ -81,6 +79,9 @@ mvn spring-boot:run
   - User: `sa`
   - Password: (vazio)
 
+
+```
+
 ## Em desenvolvimento...
 
 - Front End com Thymeleaf
@@ -90,6 +91,4 @@ mvn spring-boot:run
 - Capturas de tela.
 - Autenticação com JWT
 - 
-```
-
 ---
