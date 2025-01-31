@@ -167,3 +167,9 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /home/brisasilva
 	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
 	... 54 more
+2025-01-31 10:21:48.624297-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMG_URL CHARACTER VARYING(255)": "'https://enterprise-ecommerce-store-images.freetls.fastly.net/resize?u=aHR0cHM6L... (290)"; SQL statement:
+UPDATE "PUBLIC"."TB_ARTIST" SET "ID"=? ,"IMG_URL"=? ,"MUSICAL_GENRE"=? ,"NAME"=? ,"NATIONALITY"=?  WHERE "ID"=? [22001-232]
+2025-01-31 10:21:48.627969-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMG_URL CHARACTER VARYING(255)": "'https://enterprise-ecommerce-store-images.freetls.fastly.net/resize?u=aHR0cHM6L... (290)"; SQL statement:
+UPDATE "PUBLIC"."TB_ARTIST" SET "ID"=? ,"IMG_URL"=? ,"MUSICAL_GENRE"=? ,"NAME"=? ,"NATIONALITY"=?  WHERE "ID"=? [22001-232]
