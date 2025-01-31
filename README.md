@@ -13,7 +13,14 @@ Uma API RESTful desenvolvida com Spring Boot para gerenciar artistas e suas mús
 - Banco de dados H2 em memória com dados iniciais
 - Documentação automática dos endpoints (Springfox Swagger)
 
-![image alt](https://github.com/BrisaTielly/MelodyBase/blob/main/Screenshot%20From%202025-01-31%2012-59-39.png?raw=true)
+```
+## Imagens
+![Image Alt](https://github.com/BrisaTielly/MelodyBase/blob/main/register.png?raw=true)
+
+![Image Alt](https://github.com/BrisaTielly/MelodyBase/blob/main/list.png?raw=true)
+
+![Image Alt](https://github.com/BrisaTielly/MelodyBase/blob/main/details.png?raw=true)
+
 
 ## 🛠 Tecnologias Utilizadas
 
