@@ -1,4 +1,3 @@
-```markdown
 # API de Música - CRUD de Artistas e Músicas 🎵
 
 Uma API RESTful desenvolvida com Spring Boot para gerenciar artistas e suas músicas, com operações CRUD completas.
@@ -8,12 +7,9 @@ Uma API RESTful desenvolvida com Spring Boot para gerenciar artistas e suas mús
 - **CRUD completo para Artistas**
 - **CRUD completo para Músicas**
 - Relacionamento bidirecional entre Artistas e Músicas
-- Validação de dados
-- Tratamento de erros customizado
-- Banco de dados H2 em memória com dados iniciais
-- Documentação automática dos endpoints (Springfox Swagger)
+- Banco de dados H2 em memória.
 
-```
+
 ## Imagens
 ![Image Alt](https://github.com/BrisaTielly/MelodyBase/blob/main/register.png?raw=true)
 
@@ -97,7 +93,6 @@ mvn spring-boot:run
 - Documentação com Swagger
 - Tratamento de exceções personalizados 
 - Testes automatizados
-- Capturas de tela.
 - Autenticação com JWT
 - 
 ---
