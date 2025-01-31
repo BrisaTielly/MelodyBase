@@ -139,6 +139,7 @@
 <body>
 <div class="container">
     <h1>Lista de Músicas</h1>
+    <a th:href="@{/songs/ui/add}" class="button edit">Adicionar Música</a>
     <div class="table-responsive">
         <table>
             <thead>
@@ -148,6 +149,7 @@
                 <th>Album</th>
                 <th>Data de Lançamento</th>
                 <th>Artista</th>
+                <th> </th>
                 <th>Ações</th>
             </tr>
             </thead>
@@ -160,15 +162,16 @@
                 <td>
                             <span th:if="${song.artist}">
                                 <div class="artist-info">
-                                    <p><strong>Nome:</strong> <span th:text="${song.artist.name}"></span></p>
-                                    <p><strong>Nacionalidade:</strong> <span th:text="${song.artist.nationality}"></span></p>
-                                    <img th:src="${song.artist.imgUrl}" alt="Artista" class="artist-image">
+                                    <p><strong></strong> <span th:text="${song.artist.name}"></span></p>
+<!--                                    <p><strong>Nacionalidade:</strong> <span th:text="${song.artist.nationality}"></span></p>-->
+<!--                                    <img th:src="${song.artist.imgUrl}" alt="Artista" class="artist-image">-->
                                 </div>
                             </span>
                     <span th:if="${song.artist == null}">Artista não cadastrado ou desconhecido</span>
                 </td>
+                <td><img th:src="${song.artist.imgUrl}" alt="Artista" class="artist-image"></td>
                 <td>
-                    <a href="#" class="button details">Detalhes</a>
+                    <a th:href="@{/songs/ui/list/{id}(id=${song.id})}" class="button details">Detalhes</a>
                     <a href="#" class="button edit">Alterar</a>
                     <a th:href="@{/songs/ui/delete/{id}(id=${song.id})}" class="button delete">Deletar</a>
                 </td>

@@ -2,13 +2,12 @@ package com.leaf.melodybase.controllerUI;
 
 import com.leaf.melodybase.dtos.SongDTO;
 import com.leaf.melodybase.services.SongService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -32,6 +31,31 @@ public class SongControllerUI {
     @GetMapping("/delete/{id}")
     public String delete (@PathVariable Long id){
         songService.delete(id);
+        return "redirect:/songs/ui/list";
+    }
+
+    @GetMapping("/list/{id}")
+    public String findById(@PathVariable Long id, Model model){
+        SongDTO songs = songService.findById(id);
+        if(songs != null){
+            model.addAttribute("songs", songs);
+            return "songDetail.html";
+        }else{
+            model.addAttribute("mensagem", "Música não encontrada");
+            return "listSongs";
+        }
+    }
+
+    @GetMapping("/add")
+    public String showFormAddSong(Model model) {
+        model.addAttribute("songs", new SongDTO());
+        return "addSong";
+    }
+
+    @PostMapping("/save")
+    public String save(@ModelAttribute SongDTO song, RedirectAttributes redirectAttributes) {
+        songService.save(song);
+        redirectAttributes.addFlashAttribute("mensagem", "Música cadastrada com sucesso!");
         return "redirect:/songs/ui/list";
     }
 

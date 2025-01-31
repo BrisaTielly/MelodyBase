@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Adicionar Música</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    <style>
+        /* Global styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #1a1a2e;
+            color: #e1e1e6;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #b4a0e7;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        /* Form container */
+        .form-container {
+            background-color: #22223b;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        label {
+            margin: 10px 0 5px;
+            display: block;
+            color: #e1e1e6;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #44475a;
+            border-radius: 5px;
+            background-color: #2d2f47;
+            color: #e1e1e6;
+        }
+
+        input:focus {
+            border-color: #6a4c93;
+            outline: none;
+        }
+
+        button {
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #6a4c93;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            width: 100%;
+            font-size: 1.1rem;
+        }
+
+        button:hover {
+            background-color: #b4a0e7;
+            transform: translateY(-3px);
+        }
+
+        .mensagem {
+            color: #4CAF50;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #6a4c93;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #b4a0e7;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+
+            button {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<h1>Adicionar Nova Música</h1>
+<div class="form-container">
+    <div th:if="${mensagem}" class="mensagem" th:text="${mensagem}"></div>
+    <form th:action="@{/songs/ui/save}" th:object="${songs}" method="post">
+        <!-- Song Title -->
+        <label for="title">Nome da Música:</label>
+        <input type="text" id="title" th:field="*{title}" required />
+
+        <!-- Song Album -->
+        <label for="album">Álbum:</label>
+        <input type="text" id="album" th:field="*{album}" required />
+
+        <!-- Song Release Year -->
+        <label for="releaseYear">Ano de Lançamento:</label>
+        <input type="date" id="releaseYear" th:field="*{releaseYear}" required />
+
+
+        <label for="artistname">Artista:</label>
+        <input type="text" id="artistname" th:field="*{artist.name}" required/>
+
+        <!-- Artist Nationality
+        <label for="artist.nationality">Nacionalidade do Artista:</label>
+        <input type="text" id="artist.nationality" th:field="*{artist.nationality}" />  -->
+
+        <!-- Image URL
+        <label for="imgUrl">URL da Imagem:</label>
+        <input type="text" id="imgUrl" th:field="*{artist.imgUrl}" /> -->
+
+        <button type="submit">Cadastrar Música</button>
+    </form>
+    <a th:href="@{/songs/ui/list}">Voltar para a lista de músicas</a>
+</div>
+</body>
+</html>

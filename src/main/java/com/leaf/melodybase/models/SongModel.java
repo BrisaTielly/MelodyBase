@@ -24,7 +24,8 @@ public class SongModel {
     private String title;
 
     @ManyToOne
-    @JsonIgnore//(fetch = FetchType.EAGER)
+    @JsonIgnore
+    //(fetch = FetchType.EAGER)
     @JoinColumn(name = "artist_id")
 
     private ArtistModel artist;
